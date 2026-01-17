@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg,#e6eefc 0%, #f8f6ff 50%, #fef6f0 100%);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.98));
+  width: 720px;
+  max-width: calc(100% - 40px);
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(15,23,42,0.12);
+}
+
+h1 {
+  text-align: left;
+  font-size: 24px;
+  margin: 0;
+  color: #0f172a;
+}
+
+.card-header { margin-bottom: 16px }
+.subtitle { color: #475569; margin-top: 6px; font-size: 13px }
+
+.input-section { display:flex; gap:12px; flex-direction:column }
+.input-row { display:flex; flex-direction:column }
+.input-row span { font-size:13px; color:#475569; margin-bottom:6px }
+.input-row input { width:100%; padding:12px; margin-bottom:0; border-radius:10px; border:1px solid #e6e9ef }
+
+.diet-toggle { display:flex; gap:12px; margin-top:8px; align-items:center }
+.diet-option { background:transparent; padding:6px 10px; border-radius:8px; border:1px solid transparent; cursor:pointer; font-weight:600; color:#0f172a }
+.diet-option input { margin-right:8px }
+.diet-option input[type="radio"] { accent-color: #2563eb }
+.diet-option:hover { background:rgba(37,99,235,0.04); border-color:rgba(37,99,235,0.12) }
+
+.button-row { display:flex; gap:10px }
+.button-row .primary { flex:1; padding:12px; border-radius:10px; background:#2563eb; color:white; border:none; font-weight:600; cursor:pointer }
+.button-row .primary:hover { background:#1e40af }
+.button-row .muted { padding:12px; border-radius:10px; background:transparent; border:1px solid #cbd5e1; color:#0f172a; cursor:pointer }
+
+.result-box { background: linear-gradient(90deg, rgba(230,236,255,0.6), rgba(240,254,245,0.6)); margin-top:18px; padding:14px; border-radius:12px; text-align:left }
+
+.charts-grid { display:flex; gap:12px; align-items:center }
+.gauge-card { width:260px; height:180px }
+.trend-card { flex:1; background:linear-gradient(180deg, #fff, #fafafa); padding:8px; border-radius:10px }
+.trend-card canvas { width:100% !important; height:160px !important }
+
+.result-text { margin-top:12px; display:flex; gap:16px; align-items:center }
+.bmi-value { font-size:20px; font-weight:700; color:#0f172a }
+.bmi-category { font-size:16px; font-weight:600 }
+
+.bmi-table {
+  width: 100%;
+  margin-top: 15px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.bmi-table th,
+.bmi-table td {
+  border: 1px solid #d1d5db;
+  padding: 8px;
+  text-align: center;
+}
+
+.bmi-table th {
+  background: #e5e7eb;
+}
+
+.diet-plan { margin-top:16px; font-size:14px; color:#111827 }
+.diet-plan .plan-title { font-weight:700; margin-bottom:8px }
+.diet-items { display:flex; gap:12px; flex-wrap:wrap }
+.diet-item { background:linear-gradient(180deg,#ffffff,#f8fbff); padding:10px 12px; border-radius:10px; box-shadow:0 6px 18px rgba(2,6,23,0.06); min-width:160px; transform-origin:center; opacity:0; animation:fadeInUp 600ms ease forwards }
+.diet-item.bounce { animation:popIn 650ms cubic-bezier(.2,.9,.3,1) forwards }
+
+@keyframes fadeInUp { from { opacity:0; transform:translateY(10px) } to { opacity:1; transform:translateY(0) } }
+@keyframes popIn { 0% { transform:scale(.85); opacity:0 } 60% { transform:scale(1.05); opacity:1 } 100% { transform:scale(1) } }
+
+.bmi-category.under { color:#F59E0B }
+.bmi-category.normal { color:#22C55E }
+.bmi-category.over { color:#F97316 }
+.bmi-category.obese { color:#DC2626 }
